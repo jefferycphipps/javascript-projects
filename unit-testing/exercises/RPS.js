@@ -1,4 +1,8 @@
 function whoWon(player1,player2){
+  let choices = ['rock', 'paper', 'scissors'];
+
+  if (choices.indexOf(player1)===-1 || choices.indexOf(player2)===-1)
+    return 'Someone did not pick rock, paper, or scissors';
 
    if (player1 === player2){
      return 'TIE!';
@@ -18,3 +22,5 @@ function whoWon(player1,player2){
  
    return 'Player 1 wins!';
  }
+
+ module.exports = whoWon;
