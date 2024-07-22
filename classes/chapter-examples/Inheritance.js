@@ -21,3 +21,13 @@ class Tiger extends Panthera {
 let tigger = new Tiger();
 
 console.log(tigger);
+class Plant {
+	constructor(type, height) {
+	   this.type = type;
+	   this.height = height;
+	}
+ 
+	grow () {
+	   this.height = this.height + 1;
+	}
+ }
