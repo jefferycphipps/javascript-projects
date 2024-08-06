@@ -5,6 +5,11 @@
     width: 40%;
     position: relative;
 }
+#shuttleBackground img{
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+}
 
 #flightStatus {
     color: green;
