@@ -6,9 +6,22 @@
     <style>
       label { display: block; margin-bottom: 7px;}
     </style>
+    <script src = "script.js"></script>
   </head>
   <body>
     <!-- TODO: add form here -->
+     <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+    <Label>Test Name<input type="text" name="testName"/></Label>
+    <Label>Test Date<input type="date" name="flightDate"/></Label>
+    <label>Rocket Tyle<select name="rocketType"><option value="1">Brant</option><option value="2">Lynx</option><option value="3">Orion</option><option value="4">Terrier</option></select></label>
+    <label>Number of Rocket Boosters<input type="number" name="fuelTemp" min="1" max="10"/></label>
+    <label>Wind Rating:</label>
+    <label>No Wind<input type="radio" name="windRating" value="0"/></label>
+    <label>Mild<input type="radio" name="windRating" value="10"/></label>
+    <label>Strong<input type="radio" name="windRating" value="20"/></label>
+    <label>Use production servers<input type="checkbox" name="productionServers"/></label>
+    <button>Submit</button>
+  </form>
   </body>
   
 </html>
