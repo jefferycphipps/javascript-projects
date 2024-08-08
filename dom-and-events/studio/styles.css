@@ -5,10 +5,11 @@
     width: 40%;
     position: relative;
 }
-#shuttleBackground img{
+#shuttleBackground img {
     position: absolute;
     bottom: 0;
-    align-self: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #flightStatus {

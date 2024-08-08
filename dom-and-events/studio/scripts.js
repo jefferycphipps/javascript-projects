@@ -11,8 +11,8 @@ function init () {
     const abortMissionButton = document.getElementById("missionAbort");
     let flightStat = false;
     const rocketPos = document.getElementById("rocket");
-    rocketPos.style.left = '0px';
-    rocketPos.style.top = '0px';
+    let top = 0;
+    let left = document.getElementById("shuttleBackground").offsetLeft/2;
 
     takeOffButton.addEventListener('click', function(){
         if (window.confirm('Confirm that the shuttle is ready for takeoff.')){
@@ -20,6 +20,9 @@ function init () {
             document.getElementById("shuttleBackground").style.backgroundColor = "blue";
             document.getElementById("spaceShuttleHeight").innerHTML = "10000";
             flightStat = true;
+            top +=10;
+            rocketPos.style.marginBottom = top +'px';
+            rocketPos.style.marginLeft = left + 'px';
         }
     });
 
@@ -43,7 +46,8 @@ function init () {
     upButton.addEventListener('click', function(){
         if(flightStat){
             let height =  Number(document.getElementById("spaceShuttleHeight").innerHTML);
-            rocketPos.style.top = parseInt(rocketPos.style.top) - 10 +"px";
+            top +=10;
+            rocketPos.style.marginBottom = top +'px';
             height +=10000;
             document.getElementById("spaceShuttleHeight").innerHTML = height;
         }else{
@@ -55,7 +59,8 @@ function init () {
         if(flightStat){
             let height =  Number(document.getElementById("spaceShuttleHeight").innerHTML);
             if (height != 0){
-                rocketPos.style.top = parseInt(rocketPos.style.top) + 10 +"px";
+                top -=10;
+            rocketPos.style.marginBottom = top +'px';
                 height -=10000;
                 document.getElementById("spaceShuttleHeight").innerHTML = height;
             }
@@ -66,7 +71,8 @@ function init () {
 
     leftButton.addEventListener('click', function(){
         if(flightStat){
-           rocketPos.style.left = parseInt(rocketPos.style.left) + 10 +"px";
+            left += 10;
+           rocketPos.style.left = left +"px";
         }else{
             window.alert("The shuttle has not taken off yet.");
         }
@@ -74,7 +80,8 @@ function init () {
 
     rightButton.addEventListener('click', function(){
         if(flightStat){
-            rocketPos.style.left = parseInt(rocketPos.style.left) - 10 +"px";
+            left -= 10;
+            rocketPos.style.left = left+"px";
         }else{
             window.alert("The shuttle has not taken off yet.");
         }
