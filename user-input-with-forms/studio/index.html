@@ -16,18 +16,18 @@
 		form.addEventListener("submit",function(event){
 			input = document.querySelector("input[name=search]");
 			search = document.querySelector("input[name=engine]:checked");
-			let web = setSearchEngine(search.value);
+			let web = setSearchEngine(search.value, input.value);
 			form.setAttribute("action", web);
 
 		});
 
 		console.log(input, search);
-		function setSearchEngine(search){
+		function setSearchEngine(search, input){
 			let actions = {
-    			"google": "https://www.google.com/",
-				"bing": "https://www.bing.com/",
-				"duckduck": "https://duckduckgo.com/",
-				"ask": "https://www.ask.com/"
+    			"google": `https://www.google.com/q=${input}&o=0`,
+				"bing": `https://www.bing.com/search?q=${input}`,
+				"duckduck": `https://duckduckgo.com/?t=h_&q=${input}`,
+				"ask": `https://www.google.com/search?q=${input}`
 			};
 			let searchEngine = actions[search];
 			return searchEngine;
